@@ -1,7 +1,7 @@
 # Movies. App
 
-`Movies.` is the sample preview app of the `MotionLayout` experiments. This app realizes the 
-[InVision Studio — Movies app concept](https://dribbble.com/shots/3982621-InVision-Studio-Movies-app-concept). 
+`Movies.` is the sample preview app of the `MotionLayout` experiments.  
+This app realizes the [InVision Studio — Movies app concept](https://dribbble.com/shots/3982621-InVision-Studio-Movies-app-concept). 
 
 ## Result
 
