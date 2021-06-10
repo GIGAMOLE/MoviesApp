@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MovieWidget">
+        <attr name="movieImageAlpha" format="float"/>
+        <attr name="movieImageElevationAlpha" format="float"/>
+        <attr name="movieImageTopFadeAlpha" format="float"/>
+        <attr name="movieImageZoom" format="float"/>
+        <attr name="movieImagePanY" format="float"/>
+        <attr name="movieImage" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="MovieDetailsInfoWidget">
+        <attr name="movieDetailsScale" format="float"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motion_layout_widget_movie_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layoutDescription="@xml/scene_widget_movie_rating"
+        tools:layout_gravity="center"
+        tools:motionProgress="1">
+
+        <include
+            android:id="@+id/layout_movie_rating_1"
+            layout="@layout/layout_movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/layout_movie_rating_2"
+            layout="@layout/layout_movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/layout_movie_rating_3"
+            layout="@layout/layout_movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/layout_movie_rating_4"
+            layout="@layout/layout_movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/layout_movie_rating_5"
+            layout="@layout/layout_movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="layout_movie_rating_1,layout_movie_rating_2,layout_movie_rating_3,layout_movie_rating_4,layout_movie_rating_5"
+            app:flow_horizontalGap="@dimen/offset_min" />
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</merge>

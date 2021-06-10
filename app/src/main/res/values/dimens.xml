@@ -1,0 +1,39 @@
+<resources>
+    <dimen name="offset_min">2dp</dimen>
+    <dimen name="offset_smaller">4dp</dimen>
+    <dimen name="offset_small">8dp</dimen>
+    <dimen name="offset">16dp</dimen>
+    <dimen name="offset_medium">24dp</dimen>
+    <dimen name="offset_big">32dp</dimen>
+    <dimen name="offset_great">48dp</dimen>
+
+    <dimen name="offset_guideline_vertical">56dp</dimen>
+    <dimen name="offset_guideline_horizontal">@dimen/offset_medium</dimen>
+
+    <dimen name="offset_guideline_movie_top">136dp</dimen>
+    <dimen name="offset_guideline_movie_bottom">136dp</dimen>
+
+    <dimen name="movie_round">12dp</dimen>
+    <dimen name="movie_elevation_post_post_next">12dp</dimen>
+    <dimen name="movie_elevation_post_next">14dp</dimen>
+    <dimen name="movie_elevation_next">16dp</dimen>
+    <dimen name="movie_elevation_current">18dp</dimen>
+    <dimen name="movie_elevation_previous">@dimen/movie_elevation_current</dimen>
+    <dimen name="movie_top_fade_height">150dp</dimen>
+
+    <dimen name="title_size">30sp</dimen>
+    <dimen name="dot_size">6dp</dimen>
+    <dimen name="dot_offset_center">16dp</dimen>
+    <dimen name="dot_offset_start">2dp</dimen>
+
+    <dimen name="font_small">12sp</dimen>
+    <dimen name="font">14sp</dimen>
+    <dimen name="font_medium">18sp</dimen>
+    <dimen name="font_huge">20sp</dimen>
+    <dimen name="font_big">32sp</dimen>
+
+    <dimen name="avatar_size">38dp</dimen>
+
+    <dimen name="widget_movie_rating_disable_alpha">0.5</dimen>
+    <dimen name="widget_movie_rating_disable_scale">0.7</dimen>
+</resources>

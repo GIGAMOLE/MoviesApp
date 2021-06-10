@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    tools:layout_gravity="center"
+    tools:layout_height="500dp"
+    tools:layout_width="match_parent"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motion_layout_widget_movie_carousel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layoutDescription="@xml/scene_carousel_movie">
+
+        <com.example.moviesapp.widget.MovieWidget
+            android:id="@+id/movie_widget_post_post_next"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/offset_medium"
+            android:layout_marginEnd="@dimen/offset_medium"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/movie_round"
+            app:cardElevation="@dimen/movie_elevation_post_post_next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="1.0"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.7"
+            tools:movieImage="@drawable/img_taxi_driver" />
+
+        <com.example.moviesapp.widget.MovieWidget
+            android:id="@+id/movie_widget_post_next"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/offset_medium"
+            android:layout_marginEnd="@dimen/offset_medium"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/movie_round"
+            app:cardElevation="@dimen/movie_elevation_post_next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="1.0"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.7"
+            tools:movieImage="@drawable/img_project_power" />
+
+        <com.example.moviesapp.widget.MovieWidget
+            android:id="@+id/movie_widget_next"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/offset_medium"
+            android:layout_marginEnd="@dimen/offset_medium"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/movie_round"
+            app:cardElevation="@dimen/movie_elevation_next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="1.0"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.7"
+            tools:movieImage="@drawable/img_joker" />
+
+        <com.example.moviesapp.widget.MovieWidget
+            android:id="@+id/movie_widget_current"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/offset_medium"
+            android:layout_marginEnd="@dimen/offset_medium"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/movie_round"
+            app:cardElevation="@dimen/movie_elevation_current"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="1.0"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.7"
+            tools:movieImage="@drawable/img_justice_league" />
+
+        <com.example.moviesapp.widget.MovieWidget
+            android:id="@+id/movie_widget_previous"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/offset_medium"
+            android:layout_marginEnd="@dimen/offset_medium"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/movie_round"
+            app:cardElevation="@dimen/movie_elevation_previous"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="1.0"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.7"
+            tools:movieImage="@drawable/img_blade_runner" />
+
+        <androidx.constraintlayout.helper.widget.Carousel
+            android:id="@+id/carousel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:carousel_backwardTransition="@id/transition_carousel_movie_backward"
+            app:carousel_firstView="@id/movie_widget_current"
+            app:carousel_forwardTransition="@id/transition_carousel_movie_forward"
+            app:carousel_infinite="false"
+            app:carousel_nextState="@id/constraint_set_carousel_movie_next"
+            app:carousel_previousState="@id/constraint_set_carousel_movie_previous"
+            app:constraint_referenced_ids="movie_widget_previous,movie_widget_current,movie_widget_next,movie_widget_post_next,movie_widget_post_post_next" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</merge>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motion_layout_widget_movie_carousel_details_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layoutDescription="@xml/scene_carousel_movie_details_info"
+        tools:layout_gravity="center"
+        tools:showIn="@layout/fragment_movies">
+
+        <com.example.moviesapp.widget.MovieDetailsInfoWidget
+            android:id="@+id/movie_details_info_widget_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.moviesapp.widget.MovieDetailsInfoWidget
+            android:id="@+id/movie_details_info_widget_current"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.example.moviesapp.widget.MovieDetailsInfoWidget
+            android:id="@+id/movie_details_info_widget_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.helper.widget.Carousel
+            android:id="@+id/carousel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:carousel_backwardTransition="@id/transition_carousel_movie_details_info_backward"
+            app:carousel_firstView="@id/movie_details_info_widget_current"
+            app:carousel_forwardTransition="@id/transition_carousel_movie_details_info_forward"
+            app:carousel_infinite="false"
+            app:carousel_nextState="@id/constraint_set_carousel_movie_details_info_next"
+            app:carousel_previousState="@id/constraint_set_carousel_movie_details_info_previous"
+            app:constraint_referenced_ids="movie_details_info_widget_previous,movie_details_info_widget_current,movie_details_info_widget_next" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</merge>

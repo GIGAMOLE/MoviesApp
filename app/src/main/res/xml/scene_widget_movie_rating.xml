@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/constraint_set_widget_movie_rating">
+        <Constraint android:id="@+id/layout_movie_rating_1">
+            <Motion motion:motionStagger="5" />
+        </Constraint>
+        <Constraint android:id="@+id/layout_movie_rating_2">
+            <Motion motion:motionStagger="4" />
+        </Constraint>
+        <Constraint android:id="@+id/layout_movie_rating_3">
+            <Motion motion:motionStagger="3" />
+        </Constraint>
+        <Constraint android:id="@+id/layout_movie_rating_4">
+            <Motion motion:motionStagger="2" />
+        </Constraint>
+        <Constraint android:id="@+id/layout_movie_rating_5">
+            <Motion motion:motionStagger="1" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/transition_widget_movie_rating_start"
+        motion:deriveConstraintsFrom="@id/constraint_set_widget_movie_rating">
+        <Constraint android:id="@+id/layout_movie_rating_1">
+            <Transform
+                android:scaleX="@dimen/widget_movie_rating_disable_scale"
+                android:scaleY="@dimen/widget_movie_rating_disable_scale" />
+            <PropertySet android:alpha="@dimen/widget_movie_rating_disable_alpha" />
+        </Constraint>
+        <Constraint android:id="@+id/layout_movie_rating_2">
+            <Transform
+                android:scaleX="@dimen/widget_movie_rating_disable_scale"
+                android:scaleY="@dimen/widget_movie_rating_disable_scale" />
+            <PropertySet android:alpha="@dimen/widget_movie_rating_disable_alpha" />
+        </Constraint>
+        <Constraint android:id="@+id/layout_movie_rating_3">
+            <Transform
+                android:scaleX="@dimen/widget_movie_rating_disable_scale"
+                android:scaleY="@dimen/widget_movie_rating_disable_scale" />
+            <PropertySet android:alpha="@dimen/widget_movie_rating_disable_alpha" />
+        </Constraint>
+        <Constraint android:id="@+id/layout_movie_rating_4">
+            <Transform
+                android:scaleX="@dimen/widget_movie_rating_disable_scale"
+                android:scaleY="@dimen/widget_movie_rating_disable_scale" />
+            <PropertySet android:alpha="@dimen/widget_movie_rating_disable_alpha" />
+        </Constraint>
+        <Constraint android:id="@+id/layout_movie_rating_5">
+            <Transform
+                android:scaleX="@dimen/widget_movie_rating_disable_scale"
+                android:scaleY="@dimen/widget_movie_rating_disable_scale" />
+            <PropertySet android:alpha="@dimen/widget_movie_rating_disable_alpha" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/transition_widget_movie_rating_end"
+        motion:deriveConstraintsFrom="@id/constraint_set_widget_movie_rating" />
+
+    <Transition
+        motion:constraintSetEnd="@+id/transition_widget_movie_rating_end"
+        motion:constraintSetStart="@+id/transition_widget_movie_rating_start"
+        motion:staggered="0.85" />
+</MotionScene>

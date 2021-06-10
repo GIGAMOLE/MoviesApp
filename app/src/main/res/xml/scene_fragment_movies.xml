@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/constraint_set_fragment_movies_start" />
+    <ConstraintSet android:id="@+id/constraint_set_fragment_movies_end">
+        <Constraint
+            android:id="@+id/constraint_layout_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.0"
+            motion:layout_constraintBottom_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/image_view_avatar"
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
+            android:alpha="0.0"
+            motion:layout_constraintBottom_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent" />
+        <Constraint
+            android:id="@+id/widget_movie_carousel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="1:1"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.0" />
+        <Constraint
+            android:id="@+id/widget_movie_details_info_carousel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_big"
+            motion:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+            motion:layout_constraintStart_toStartOf="@id/guideline_left"
+            motion:layout_constraintTop_toBottomOf="@+id/widget_movie_carousel"
+            motion:layout_constraintVertical_bias="0.0" />
+        <Constraint
+            android:id="@+id/text_view_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_big"
+            android:alpha="1.0"
+            motion:layout_constraintEnd_toEndOf="@id/guideline_right"
+            motion:layout_constraintStart_toStartOf="@id/guideline_left"
+            motion:layout_constraintTop_toBottomOf="@id/widget_movie_details_info_carousel"
+            motion:transitionEasing="decelerate" />
+    </ConstraintSet>
+
+    <Transition
+        motion:constraintSetEnd="@+id/constraint_set_fragment_movies_end"
+        motion:constraintSetStart="@id/constraint_set_fragment_movies_start"
+        motion:duration="800"
+        motion:motionInterpolator="easeOut">
+        <OnSwipe
+            motion:autoCompleteMode="continuousVelocity"
+            motion:dragDirection="dragUp"
+            motion:onTouchUp="autoComplete"
+            motion:touchAnchorSide="bottom" />
+        <OnClick
+            motion:clickAction="transitionToEnd"
+            motion:targetId="@id/view_open_movie_click" />
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0.0"
+                motion:framePosition="40"
+                motion:motionTarget="@+id/text_view_description"
+                motion:transitionEasing="decelerate" />
+            <KeyAttribute
+                android:translationY="32dp"
+                motion:framePosition="50"
+                motion:motionTarget="@+id/text_view_description"
+                motion:transitionEasing="decelerate" />
+            <KeyTrigger
+                motion:framePosition="75"
+                motion:motionTarget="@+id/widget_movie_carousel" />
+        </KeyFrameSet>
+    </Transition>
+</MotionScene>
