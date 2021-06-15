@@ -21,7 +21,7 @@ val MOVIES: List<Movie> = listOf(
 		subtitle = "Coming in 17.12.20",
 		description = "Fueled by his restored faith in humanity and inspired by Superman's selfless act, Bruce Wayne enlists the help of his new-found ally, to face an even greater enemy.",
 		poster = R.drawable.img_justice_league,
-		rating = 3
+		rating = 1
 	),
 	Movie(
 		id = 2,
@@ -29,7 +29,7 @@ val MOVIES: List<Movie> = listOf(
 		subtitle = "Coming in 01.01.21",
 		description = "In near-future New Orleans, a mysterious distributor offers a free supply of “Power”–a pill that grants various superpowers for five minutes–to a group of drug dealers.",
 		poster = R.drawable.img_project_power,
-		rating = 1
+		rating = 4
 	),
 	Movie(
 		id = 3,
@@ -37,7 +37,7 @@ val MOVIES: List<Movie> = listOf(
 		subtitle = "Coming in 12.08.19",
 		description = "The Joker is a fictional character who appears in Christopher Nolan's 2008 superhero film The Dark Knight, based upon the DC character and supervillain of the same name.",
 		poster = R.drawable.img_joker,
-		rating = 4
+		rating = 3
 	),
 	Movie(
 		id = 4,

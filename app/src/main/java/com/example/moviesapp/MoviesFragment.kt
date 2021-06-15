@@ -48,10 +48,27 @@ class MoviesFragment : Fragment() {
 	private fun setupMainCarousel() {
 		binding.widgetMovieCarousel.onNewItemCallback = { index ->
 			// Animates and invalidates related widgets, when the main movie carousel changes.
-			binding.widgetMovieDetailsInfoCarousel.animateToIndex(index)
-			invalidateCurrentMovieDetails()
+			binding.widgetMovieDetailsInfoCarousel.invalidateOnNewItem(index)
+			binding.textViewDescription.text = MOVIES[index].description
 		}
-		invalidateCurrentMovieDetails()
+		binding.widgetMovieCarousel.onNewItemChangeCallback = { progress ->
+			binding.widgetMovieDetailsInfoCarousel.setOnNewItemProgress(progress)
+			binding.widgetMovieRating.setRatingProgress(progress)
+		}
+		binding.widgetMovieCarousel.onNewItemStartCallback = { isForward ->
+			binding.widgetMovieDetailsInfoCarousel.setOnNewItemStart(isForward)
+			binding.widgetMovieRating.invalidateRating(
+				binding.widgetMovieCarousel.currentIndex, isForward
+			)
+		}
+
+		invalidateInitialData()
+	}
+
+	private fun invalidateInitialData() {
+		val currentIndex = binding.widgetMovieCarousel.currentIndex
+		binding.textViewDescription.text = MOVIES[currentIndex].description
+		binding.widgetMovieRating.setIndex(currentIndex)
 	}
 
 	private fun setupOpenTransition() {
@@ -90,12 +107,6 @@ class MoviesFragment : Fragment() {
 				changeStatusBarIconsToDark(!positive)
 			}
 		})
-	}
-
-	private fun invalidateCurrentMovieDetails() {
-		val movie = MOVIES[binding.widgetMovieCarousel.currentIndex]
-		binding.widgetMovieRating.animateRating(movie.rating)
-		binding.textViewDescription.text = movie.description
 	}
 
 	@Suppress("DEPRECATION")

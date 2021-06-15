@@ -1,11 +1,12 @@
 package com.example.moviesapp.widget
 
-import android.animation.ValueAnimator
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.FrameLayout
 import com.example.moviesapp.R
 import com.example.moviesapp.databinding.WidgetMovieRatingBinding
+import com.example.moviesapp.db.MOVIES
+import com.google.android.material.math.MathUtils
 import kotlin.random.Random
 
 class MovieRatingWidget @JvmOverloads constructor(
@@ -13,39 +14,70 @@ class MovieRatingWidget @JvmOverloads constructor(
 ) : FrameLayout(context, attrs) {
 
 	private val binding: WidgetMovieRatingBinding
-	private var progressAnimator = ValueAnimator.ofFloat(0.0F, 1.0F)
+
+	private var targetRating: Int = 0
+	private var currentRating: Int = 0
 
 	init {
 		inflate(context, R.layout.widget_movie_rating, this)
 		binding = WidgetMovieRatingBinding.bind(this)
 
 		if (isInEditMode) {
-			// Animates to the random rating in editor.
-			animateRating(Random.nextInt(4), true)
+			// Set the random rating in editor.
+			setIndex(Random.nextInt(4))
 		}
 	}
 
 	/**
-	 * Animate rating. Transforms the [rating] value to the MotionLayout progress.
+	 * Invalidates the rating with the index.
 	 *
-	 * @param rating the movie rating from 0 to 4.
-	 * @param force if true - set rating without animation.
+	 * @param index the current movie index.
 	 */
-	fun animateRating(rating: Int, force: Boolean = false) {
-		// Finds the proper staggered progress.
-		// For example: first star is in range from 0 to 20.
-		val progress = (rating.toFloat() + 1F) / 5F
-		val lastProgress = progressAnimator.animatedValue as Float
+	fun setIndex(index: Int) {
+		val currentMovie = MOVIES[index]
 
-		progressAnimator.pause()
-		progressAnimator = ValueAnimator.ofFloat(lastProgress, progress).apply {
-			duration = if (force) 0L else 350L
-			addUpdateListener {
-				val currentProgress = it.animatedValue as Float
-				binding.motionLayoutWidgetMovieRating.progress = currentProgress
-			}
+		currentRating = currentMovie.rating
+		targetRating = currentRating
+
+		setRatingProgress(1.0F)
+	}
+
+	/**
+	 * Setup the target rating value for change progress transition.
+	 *
+	 * @param index the current index of the movie carousel.
+	 * @param isForward is moving forward the movie carousel.
+	 */
+	fun invalidateRating(index: Int, isForward: Boolean) {
+		val targetIndex = if (isForward) {
+			index + 1
+		} else {
+			index - 1
 		}
 
-		progressAnimator.start()
+		val currentMovie = MOVIES[index]
+		val targetMovie = MOVIES[targetIndex]
+
+		currentRating = currentMovie.rating
+		targetRating = targetMovie.rating
+	}
+
+	/**
+	 * Animates the rating with the progress from the [MovieCarouselWidget].
+	 *
+	 * @param progress the fraction from 0 to 1.
+	 */
+	fun setRatingProgress(progress: Float) {
+		val startProgress = calculateRatingProgress(currentRating)
+		val endProgress = calculateRatingProgress(targetRating)
+
+		binding.motionLayoutWidgetMovieRating.progress =
+			MathUtils.lerp(startProgress, endProgress, progress)
+	}
+
+	private fun calculateRatingProgress(rating: Int): Float {
+		// Finds the proper staggered progress.
+		// For example: first star is in range from 0 to 20.
+		return (rating.toFloat() + 1F) / 5F
 	}
 }

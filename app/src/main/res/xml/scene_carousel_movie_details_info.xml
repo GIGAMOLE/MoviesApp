@@ -4,9 +4,10 @@
 
     <Transition
         android:id="@+id/transition_carousel_movie_details_info_forward"
-        motion:duration="250"
+        motion:autoTransition="none"
         motion:constraintSetEnd="@+id/constraint_set_carousel_movie_details_info_next"
-        motion:constraintSetStart="@id/constraint_set_carousel_movie_details_info_start">
+        motion:constraintSetStart="@id/constraint_set_carousel_movie_details_info_start"
+        motion:duration="250">
         <KeyFrameSet>
             <KeyAttribute
                 android:translationY="-26dp"
@@ -24,9 +25,10 @@
     </Transition>
     <Transition
         android:id="@+id/transition_carousel_movie_details_info_backward"
-        motion:duration="250"
+        motion:autoTransition="none"
         motion:constraintSetEnd="@+id/constraint_set_carousel_movie_details_info_previous"
-        motion:constraintSetStart="@+id/constraint_set_carousel_movie_details_info_start">
+        motion:constraintSetStart="@+id/constraint_set_carousel_movie_details_info_start"
+        motion:duration="250">
         <KeyFrameSet>
             <KeyAttribute
                 android:translationY="26dp"
@@ -44,6 +46,7 @@
     </Transition>
     <Transition
         android:id="@+id/transition_carousel_movie_details_info_open"
+        motion:autoTransition="none"
         motion:constraintSetEnd="@+id/constraint_set_carousel_movie_details_info_open"
         motion:constraintSetStart="@+id/constraint_set_carousel_movie_details_info_start"
         motion:duration="800" />

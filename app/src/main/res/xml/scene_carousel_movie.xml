@@ -574,7 +574,8 @@
     <Transition
         android:id="@+id/transition_carousel_movie_forward"
         motion:constraintSetEnd="@+id/constraint_set_carousel_movie_next"
-        motion:constraintSetStart="@+id/constraint_set_carousel_movie_start">
+        motion:constraintSetStart="@+id/constraint_set_carousel_movie_start"
+        app:motionInterpolator="easeIn">
         <OnSwipe
             motion:dragDirection="dragRight"
             motion:onTouchUp="autoComplete" />
@@ -582,7 +583,8 @@
     <Transition
         android:id="@+id/transition_carousel_movie_backward"
         motion:constraintSetEnd="@+id/constraint_set_carousel_movie_previous"
-        motion:constraintSetStart="@+id/constraint_set_carousel_movie_start">
+        motion:constraintSetStart="@+id/constraint_set_carousel_movie_start"
+        app:motionInterpolator="easeIn">
         <OnSwipe
             motion:dragDirection="dragLeft"
             motion:onTouchUp="autoComplete" />
@@ -590,9 +592,10 @@
     <Transition
         android:id="@+id/transition_carousel_movie_open"
         app:constraintSetStart="@+id/constraint_set_carousel_movie_start"
-        app:motionInterpolator="linear"
+        app:motionInterpolator="cubic(0.06,0.3,0.81,1)"
         motion:constraintSetEnd="@+id/constraint_set_carousel_movie_open"
-        motion:duration="800">
+        motion:duration="800"
+        app:pathMotionArc="startHorizontal">
         <KeyFrameSet>
             <KeyAttribute
                 app:framePosition="1"

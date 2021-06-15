@@ -65,14 +65,23 @@
         <KeyFrameSet>
             <KeyAttribute
                 android:alpha="0.0"
-                motion:framePosition="40"
-                motion:motionTarget="@+id/text_view_description"
-                motion:transitionEasing="decelerate" />
+                motion:framePosition="80"
+                motion:motionTarget="@+id/text_view_description" />
+            <KeyPosition
+                motion:keyPositionType="deltaRelative"
+                motion:percentY="1.0"
+                motion:framePosition="0"
+                motion:motionTarget="@+id/text_view_description" />
             <KeyAttribute
-                android:translationY="32dp"
-                motion:framePosition="50"
-                motion:motionTarget="@+id/text_view_description"
-                motion:transitionEasing="decelerate" />
+                motion:keyPositionType="deltaRelative"
+                android:translationY="46dp"
+                motion:framePosition="80"
+                motion:motionTarget="@+id/text_view_description" />
+            <KeyAttribute
+                motion:keyPositionType="deltaRelative"
+                android:translationY="0dp"
+                motion:framePosition="100"
+                motion:motionTarget="@+id/text_view_description" />
             <KeyTrigger
                 motion:framePosition="75"
                 motion:motionTarget="@+id/widget_movie_carousel" />

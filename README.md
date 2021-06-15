@@ -3,6 +3,17 @@
 `Movies.` is the sample preview app of the `MotionLayout` experiments.  
 This app realizes the [InVision Studio — Movies app concept](https://dribbble.com/shots/3982621-InVision-Studio-Movies-app-concept). 
 
+## Result Update #1
+
+| Design | Code |
+|-|-|
+| ![](/media/movies_design.gif) | ![](/media/movies_code_2.gif) |
+
+- Added the relative transition change of the Movie carousel progress, and the Movie details bottom info progress.
+- Added the relative transition change of the Movie carousel progress, and the Movie rating progress.
+- Tuned some Movie carousel transitions values.
+- Fixed the movie description transition.
+
 ## Result
 
 | Design | Code |
@@ -42,13 +53,13 @@ This app realizes the [InVision Studio — Movies app concept](https://dribbble.
 - Editor does not invalidate the cache, and it forces reloading Android Studio frequently.
 - The `ConstraintSet`/`Constraint` overrides sometimes does not work properly, so it forces to rewrite the whole 
   `Constraint` from the original state.   
-- Lack of functionality to properly set/switch between the transitions. Right now it works the best when you have one 
-  scene with one transition.
+- ~~Lack of functionality to properly set/switch between the transitions. Right now it works the best when you have one 
+  scene with one transition.~~
 - It is not possible to extend the MotionLayout as the `CustomView`, because there is not such a method to set the scene
   programmatically. It forces to wrap the MotionLayout into the `FrameLayout` or other.
 - It still in beta, so it requires the last beta/alpha Android Studio build.
-- Lack of the possibility to chain/reference multiple/nested `MotionLayout`s. For example, if you want to animate the 
-  main transition and with it propagate the animation state to the others.
+- ~~Lack of the possibility to chain/reference multiple/nested `MotionLayout`s. For example, if you want to animate the 
+  main transition and with it propagate the animation state to the others.~~
 
 ## Summary
 

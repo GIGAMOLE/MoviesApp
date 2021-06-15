@@ -41,12 +41,42 @@ class MovieDetailsInfoCarouselWidget @JvmOverloads constructor(
 	}
 
 	/**
-	 * Animates the carousel to the [index].
+	 * Invalidates the carousels [index].
 	 *
-	 * @param index a new index for this carousel.
+	 * @param index a new index for the carousel.
 	 */
-	fun animateToIndex(index: Int) {
-		binding.carousel.transitionToIndex(index, 350)
+	fun invalidateOnNewItem(index: Int) {
+		// Transition to the start state and override the mCurrentState variable.
+		binding.motionLayoutWidgetMovieCarouselDetailsInfo.transitionToState(
+			R.id.constraint_set_carousel_movie_details_info_start
+		)
+		binding.carousel.jumpToIndex(index)
+	}
+
+	/**
+	 * Setup the transition before the onNewItem() progress change.
+	 *
+	 * @param isForward is moving forward the movie carousel.
+	 */
+	fun setOnNewItemStart(isForward: Boolean) {
+		if (isForward) {
+			binding.motionLayoutWidgetMovieCarouselDetailsInfo.setTransition(
+				R.id.transition_carousel_movie_details_info_forward
+			)
+		} else {
+			binding.motionLayoutWidgetMovieCarouselDetailsInfo.setTransition(
+				R.id.transition_carousel_movie_details_info_backward
+			)
+		}
+	}
+
+	/**
+	 * Set the transition progress while the onNewItem() transition of the [MovieCarouselWidget] moving.
+	 *
+	 * @param progress the movie carousel progress.
+	 */
+	fun setOnNewItemProgress(progress: Float) {
+		binding.motionLayoutWidgetMovieCarouselDetailsInfo.progress = progress
 	}
 
 	/**
