@@ -99,4 +99,4 @@ Created at [intive](https://intive.com)
 [Basil Miller](https://www.linkedin.com/in/gigamole/)  
 [gigamole53@gmail.com](mailto:gigamole53@gmail.com)
 
-![](/media/intive_3.jpeg)
+![](/media/intive_4.png)
