@@ -1,3 +1,5 @@
+![](/media/intive_4.png)
+
 # Movies. App
 
 `Movies.` is the sample preview app of the `MotionLayout` experiments.  
@@ -87,6 +89,10 @@ Also, this sample app requires a [Android Studio Beta - Arctic Fox](https://deve
 ## Credits
 
 Special thanks to the [Charles Patterson](https://dribbble.com/CharlesPatterson). 
+
+Created at [intive](https://intive.com)
+
+![](/media/intive_3.jpeg)
 
 ## Author:
 
