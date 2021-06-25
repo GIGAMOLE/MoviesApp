@@ -90,7 +90,7 @@ Also, this sample app requires a [Android Studio Beta - Arctic Fox](https://deve
 
 Special thanks to the [Charles Patterson](https://dribbble.com/CharlesPatterson). 
 
-Created at [intive](https://intive.com)
+Created at [intive](https://intive.com).
 
 ![](/media/intive_4.png)
 
