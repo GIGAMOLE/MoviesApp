@@ -1,4 +1,4 @@
-![](/media/intive_3.jpeg)
+![](/media/header.png)
 
 # Movies. App
 
@@ -90,13 +90,7 @@ Also, this sample app requires a [Android Studio Beta - Arctic Fox](https://deve
 
 Special thanks to the [Charles Patterson](https://dribbble.com/CharlesPatterson). 
 
-Created at [intive](https://intive.com).
-
-![](/media/intive_4.png)
-
 ## Author:
 
 [Basil Miller](https://www.linkedin.com/in/gigamole/)  
 [gigamole53@gmail.com](mailto:gigamole53@gmail.com)
-
-![](/media/intive_2.png)
